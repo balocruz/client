@@ -270,6 +270,11 @@ footer {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 40px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+  }
+  .hero .content img {
+    height: 300px;
   }
   .features .cards {
     grid-template-columns: 1fr;
