@@ -380,7 +380,6 @@ footer {
   }
   .testimonials .cards,
   .steps {
-    overflow: auto;
     grid-template-columns: 1fr;
   }
 }
