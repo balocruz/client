@@ -327,7 +327,8 @@ footer {
   .features .cards {
     grid-template-columns: 1fr;
   }
-  .testimonials .cards {
+  .testimonials .cards,
+  .steps {
     overflow: auto;
     grid-template-columns: 1fr;
   }
