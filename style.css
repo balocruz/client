@@ -262,6 +262,7 @@ a:hover {
 .works {
   margin: 0 auto;
   padding: 100px 24px;
+  border-bottom: 1px solid #333;
 }
 
 .works h2 {
@@ -291,6 +292,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text--muted);
 }
 
 /*Medium Screen*/
