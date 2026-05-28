@@ -382,7 +382,7 @@ footer {
     overflow: auto;
     grid-template-columns: 1fr;
   }
-  .steps {
+  .works .steps {
     grid-template-columns: 1fr;
   }
 }
