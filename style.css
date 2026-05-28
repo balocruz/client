@@ -1,9 +1,11 @@
 :root {
   --primaryColor: #6366f1;
+  --primaryColor--sec: #8789f7;
   --BG--DARK: #0f0f0f;
-  --bg--card: #1f2937;
-  --bg--card-sec: #212135;
-  --text--color: #a5b4fc;
+  --bg--card: #21213586;
+  --bg--card-sec: #1a1b2e;
+  --text--main: #ffffff;
+  --text--muted: #9ca3af;
 }
 * {
   margin: 0;
@@ -17,12 +19,22 @@ html {
 
 body {
   background-color: var(--BG--DARK);
-  color: var(--text--color);
+  color: var(--text--main);
   line-height: 1.5;
   overflow-x: hidden;
   transition:
     background-color 300ms ease-in-out,
     color 300ms ease-in-out;
+}
+h2::after {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 4px;
+  background-color: var(--primaryColor--sec);
+  margin-top: 8px;
 }
 
 header {
@@ -37,21 +49,33 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 20px 10px;
 }
 .active {
   color: var(--primaryColor);
 }
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primaryColor);
+}
+.header .logo span {
+  color: var(--primaryColor--sec);
+}
+.header .logo span::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primaryColor--sec);
+  border-radius: 50%;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 32px;
   padding: 10px;
-}
-.header img {
-  height: 70px;
-  width: 80px;
-  border-radius: 20px;
 }
 
 .nav-menu ul {
@@ -62,7 +86,7 @@ header {
 }
 a {
   text-decoration: none;
-  color: var(--text--color);
+  color: var(--text--muted);
   transition: all 300ms;
 }
 a:hover {
@@ -82,7 +106,7 @@ a:hover {
 }
 .btn:hover {
   color: white;
-  background-color: #8789f7;
+  background-color: var(--primaryColor--sec);
 }
 
 .hamburger {
@@ -112,10 +136,10 @@ a:hover {
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
   padding: 70px 24px 150px 24px;
-  gap: 50px;
+  gap: 30px;
 }
 .content .text {
   flex-direction: column;
@@ -130,12 +154,24 @@ a:hover {
   margin-bottom: 40px;
 }
 .text p {
+  color: var(--text--muted);
   font-size: 1.2rem;
   line-height: 1.15;
   margin-bottom: 60px;
 }
-.hero img {
+
+.content img {
+  display: none;
   height: auto;
+  width: 100%;
+}
+.hero .image {
+  background-image: url("Echo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 550px;
   width: 100%;
   border-radius: 12px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
@@ -173,6 +209,7 @@ a:hover {
   font-size: 1.3rem;
 }
 .features .card p {
+  color: var(--text--muted);
   font-size: 0.95rem;
 }
 
@@ -191,6 +228,8 @@ a:hover {
   background-color: #121214;
 }
 .testimonials h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
   height: 100%;
   text-align: center;
   margin-bottom: 60px;
@@ -198,7 +237,7 @@ a:hover {
 
 .testimonials .cards .card {
   font-size: 1.1rem;
-  color: var(--text--color);
+  color: var(--text--main);
   background-color: var(--bg--card);
   padding: 32px;
   border: 2px solid #16162a;
@@ -211,6 +250,7 @@ a:hover {
 }
 
 .testimonials .cards .card q {
+  color: var(--text--muted);
   font-style: italic;
 }
 
@@ -229,8 +269,7 @@ a:hover {
   font-size: 2.5rem;
   margin-bottom: 60px;
 }
-
-.steps {
+.works .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
@@ -277,12 +316,12 @@ footer {
   }
   .nav-menu {
     position: fixed;
-    top: 60px;
+    top: 75px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 80px);
     transition: left 300ms ease-in-out;
-    border-top: 1px solid;
+    border-top: 1px solid #333;
     background-color: #0f0f0f;
   }
   .nav-menu ul {
@@ -321,8 +360,18 @@ footer {
     padding-left: 3px;
     padding-right: 3px;
   }
-  .hero .content img {
-    height: 300px;
+  .content img {
+    display: block;
+  }
+  .content .image {
+    display: none;
+  }
+  .text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 40px;
   }
   .features .cards {
     grid-template-columns: 1fr;
